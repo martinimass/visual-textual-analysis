@@ -1,5 +1,5 @@
 # visual-textual-analysis
-Deep Learning techniques for Visual and Textual Analysis of images in the Retail environment
+## Deep Learning techniques for Visual and Textual Analysis of images in the Retail environment
 
 This project has been included in the paper "Robotic Retail Surveying by Deep Learning Visual and
 Textual Data" accepted in Robotics and Automation Society, 2018. Tested on:
@@ -11,31 +11,31 @@ Textual Data" accepted in Robotics and Automation Society, 2018. Tested on:
 You can test these scripts on the following dataset:
 - SMART Dataset
 
-Python Environment Setup:
+## Python Environment Setup:
 You should install the following python dependencies:
 - sklearn 
 - PIL 
 - skimage 
 - concurrent
 
-Neural Networks Environment Setup:
+## Neural Networks Environment Setup:
 Each phase of the project shold have its own environment. We recommend to install different virtual environments.
   
-  VISUAL FEATURE EXTRACTION:
+  ### VISUAL FEATURE EXTRACTION:
   - Install CAFFE Framework and all his dependencies
   
-  TEXTUAL FEATURE EXTRACTION:
+  ### TEXTUAL FEATURE EXTRACTION:
   - Download and install the project TextBoxes (https://github.com/mathDR/reading-text-in-the-wild) with all dependencies
   - Download and install the project reading-text-in-the-wild (https://github.com/mathDR/reading-text-in-the-wild) with all dependencies
   - Download and install the project for Text Classification
 
-Dataset:
+## Dataset:
 - Download the dataset files;
 - Create the folder "dataset" and put dataset files inside that.
 
-Run:
+## Run:
 Move to the bin folder and run the scripts from there.
-  VISUAL FEATURE EXTRACTOR:
+  ### VISUAL FEATURE EXTRACTOR:
 
   - bash visual/visual-finetuning.sh NETWORK
       NETWORK = VGG16 | AlexNet | CaffeNet | GoogLeNet | ResNet50 | ResNet101 | ResNet152
@@ -44,7 +44,7 @@ Move to the bin folder and run the scripts from there.
   - python visual/visual-feature-extractor.py NETWORK N_ITER
 
 
-  TEXTUAL FEATURE EXTRACTOR:
+  ### TEXTUAL FEATURE EXTRACTOR:
   - OCR:
       - python textual/text1_detection
         remember to change the path regardind the dataset and TextBoxes (.caffemodel and .prototxt files)
@@ -68,7 +68,7 @@ Move to the bin folder and run the scripts from there.
       - bash textual/text_feature_extractor.sh
         remember to change the path regarding caffe-txt
 
-  OVERALL:
+  ### OVERALL:
   - bash create_final_dataset.sh VIS_CNN VIS_LAYER TXT_MODEL TXT_LAYER
     VIS_CNN = CNN model used for Visual Feature Extractor
     VIS_LAYER = CNN layer used for Textual Feature Extractor
