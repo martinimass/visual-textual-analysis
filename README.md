@@ -12,12 +12,21 @@ Textual Data" accepted in Robotics and Automation Society, 2018. Tested on:
 
 You can test these scripts on the following dataset:
 - [SMART Dataset](http://vrai.dii.univpm.it/content/smart-dataset)
+  - "SOOS" Example: 
+  
+    <img src="https://github.com/martinimass/visual-textual-analysis/blob/master/dataset/SOOS.jpg" width="200" height="200" />
+  - "Normal" Example: 
+  
+    <img src="https://github.com/martinimass/visual-textual-analysis/blob/master/dataset/Normal.jpg" width="200" height="200" />
+  - "Promotion" Example: 
+  
+    <img src="https://github.com/martinimass/visual-textual-analysis/blob/master/dataset/Promotion.jpg" width="200" height="200" />
 
 ## Python Environment Setup:
 You should install the following python dependencies:
-- sklearn 
-- PIL 
-- skimage 
+- sklearn
+- PIL
+- skimage
 - concurrent
 
 ## Neural Networks Environment Setup:
@@ -32,27 +41,26 @@ Each phase of the project shold have its own environment. We recommend to instal
   - Download and install the project for Text Classification
 
 ## Dataset:
-- Download the dataset files;
-- Create the `/dataset` folder  and put dataset files inside that.
+- Download the dataset files.
+- Create the `/dataset` folder and put dataset files inside that.
 
 ## Run:
 Move to the `/bin` folder and run the scripts from there.
 ### VISUAL FEATURE EXTRACTOR:
-
-```
-bash visual/visual-finetuning.sh NETWORK 
-
-(NETWORK = VGG16 | AlexNet | CaffeNet | GoogLeNet | ResNet50 | ResNet101 | ResNet152)
-```
-```
-python visual/visual-testmodel.py NETWORK N_ITER
-
-(N_ITER = number of iterations for the best trained weights of the network)   
-for example: caffenet-snapshot_iter_N_ITER.caffemodel
-```
-```
-python visual/visual-feature-extractor.py NETWORK N_ITER
-```
+#### - FINE TUNING:
+        ```
+        bash visual/visual-finetuning.sh NETWORK 
+        ```
+        NETWORK = VGG16 | AlexNet | CaffeNet | GoogLeNet | ResNet50 | ResNet101 | ResNet152)
+#### - TEST:
+        ```
+        python visual/visual-testmodel.py NETWORK N_ITER 
+        ```
+        N_ITER = number of iterations for the best trained weights of the network)  
+#### - FEATURE EXTRACTION:
+        ```
+        python visual/visual-feature-extractor.py NETWORK N_ITER
+        ```
 
 ### TEXTUAL FEATURE EXTRACTOR:
 #### OCR:
@@ -111,7 +119,7 @@ bash create_final_dataset.sh VIS_CNN VIS_LAYER TXT_MODEL TXT_LAYER
 ```
 bash final_classifier.sh VIS_CNN VIS_LAYER TXT_MODEL TXT_LAYER N_THREADS
 
-  N_THREADS = Number of parallel threads 
-```    
+  N_THREADS = Number of parallel threads
+```
 
 
