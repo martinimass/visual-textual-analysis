@@ -112,7 +112,7 @@ Move to the `/bin` folder and run the scripts from there.
   remember to change the path regarding caffe-txt;
 
 ### OVERALL:
-#### - Union of Visual and Textual Features:
+#### - UNION OF VISUAL AND TEXTUAL FEATURES:
   ```
   bash create_final_dataset.sh VIS_CNN VIS_LAYER TXT_MODEL TXT_LAYER
   ```
@@ -124,7 +124,7 @@ Move to the `/bin` folder and run the scripts from there.
   
   TXT_LAYER = CNN layer used for Textual Feature Extractor;
   
-#### - Machine Learning Classifiers:  
+#### - MACHINE LEARNING CLASSIFIERS:  
   ```
   bash final_classifier.sh VIS_CNN VIS_LAYER TXT_MODEL TXT_LAYER N_THREADS
   ```
