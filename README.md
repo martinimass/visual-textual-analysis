@@ -6,10 +6,12 @@ Textual Data" accepted in Robotics and Automation Society, 2018. Tested on:
 
 - Ubuntu 16.04
 - Python 2.7
-- CUDA 8.0
+- NVIDIA GeForce GTX 960M (4 GB GDDR5)
+- CUDA v8.0
+- cuDNN v6.0
 
 You can test these scripts on the following dataset:
-- SMART Dataset
+- [SMART Dataset](http://vrai.dii.univpm.it/content/smart-dataset)
 
 ## Python Environment Setup:
 You should install the following python dependencies:
@@ -22,19 +24,19 @@ You should install the following python dependencies:
 Each phase of the project shold have its own environment. We recommend to install different virtual environments.
   
   ### VISUAL FEATURE EXTRACTION:
-  - Install CAFFE Framework and all his dependencies
+  - Install [CAFFE Framework](https://github.com/BVLC/caffe) and all his dependencies
   
   ### TEXTUAL FEATURE EXTRACTION:
-  - Download and install the project TextBoxes (https://github.com/mathDR/reading-text-in-the-wild) with all dependencies
-  - Download and install the project reading-text-in-the-wild (https://github.com/mathDR/reading-text-in-the-wild) with all dependencies
+  - Download and install the project [TextBoxes](https://github.com/mathDR/reading-text-in-the-wild) with all dependencies
+  - Download and install the project [reading-text-in-the-wild](https://github.com/mathDR/reading-text-in-the-wild) with all dependencies
   - Download and install the project for Text Classification
 
 ## Dataset:
 - Download the dataset files;
-- Create the folder "dataset" and put dataset files inside that.
+- Create the `/dataset` folder  and put dataset files inside that.
 
 ## Run:
-Move to the bin folder and run the scripts from there.
+Move to the `/bin` folder and run the scripts from there.
 ### VISUAL FEATURE EXTRACTOR:
 
 ```
