@@ -47,37 +47,39 @@ Each phase of the project shold have its own environment. We recommend to instal
 ## Run:
 Move to the `/bin` folder and run the scripts from there.
 ### VISUAL FEATURE EXTRACTOR:
-#### - FINE TUNING:
-        ```
-        bash visual/visual-finetuning.sh NETWORK 
-        ```
-        NETWORK = VGG16 | AlexNet | CaffeNet | GoogLeNet | ResNet50 | ResNet101 | ResNet152)
+#### - FINE-TUNING:
+  ```
+  bash visual/visual-finetuning.sh NETWORK 
+  ```
+  NETWORK = VGG16 | AlexNet | CaffeNet | GoogLeNet | ResNet50 | ResNet101 | ResNet152
 #### - TEST:
-        ```
-        python visual/visual-testmodel.py NETWORK N_ITER 
-        ```
-        N_ITER = number of iterations for the best trained weights of the network)  
+  ```
+  python visual/visual-testmodel.py NETWORK N_ITER 
+  ```
+  N_ITER = number of iterations for the best trained weights of the network;
 #### - FEATURE EXTRACTION:
-        ```
-        python visual/visual-feature-extractor.py NETWORK N_ITER
-        ```
+  ```
+  python visual/visual-feature-extractor.py NETWORK N_ITER
+  ```
 
 ### TEXTUAL FEATURE EXTRACTOR:
 #### OCR:
   1) Text Detection
   ```
   python textual/text1_detection
-    remember to change the path regardind the dataset and TextBoxes (.caffemodel and .prototxt files)
   ```
+  remember to change the path regardind the dataset and TextBoxes (.caffemodel and .prototxt files);
+  
   2) Text Arrangement
   ```
   python textual/text2_arrangement.py
   ```
   3) Text Recognition
   ```
-  bash textual/text3_recognition.sh 
-    remember to change the path regarding reading-text-in-the-wild (in this script, in batch_charnet.py and batch_dictnet.py)
+  bash textual/text3_recognition.sh
   ```
+  remember to change the path regarding reading-text-in-the-wild (in text3_recognition.sh, batch_charnet.py and batch_dictnet.py);
+  
   4) Text Assembly
   ```
   python textual/text4_assembly.py
@@ -90,36 +92,42 @@ Move to the `/bin` folder and run the scripts from there.
   python textual/text5b_encoding.py
   ```
 #### TEXTUAL FEATURE EXTRACTOR:
-```
-bash textual/text_finetuning.sh TXT_ARCH
+##### - FINE-TUNING:
+  ```
+  bash textual/text_finetuning.sh TXT_ARCH
+  ```
+  TXT_ARCH = [char2|dict2];
+  
+  remember to change the path regarding caffe-txt (.caffemodel and .prototxt files);
 
-  TXT_ARCH = [char2|dict2] 
-  remember to change the path regarding caffe-txt (.caffemodel and .prototxt files)
-```
-```
-bash textual/text_testmodel.sh
-
-  remember to change the path regarding caffe-txt and number of iterations for the best trained weights of the networks (char2|dict2)
-```
-```
-bash textual/text_feature_extractor.sh
-
-  remember to change the path regarding caffe-txt
-```
+##### - TEST:
+  ```
+  bash textual/text_testmodel.sh
+  ```
+  remember to change the path regarding caffe-txt and number of iterations for the best trained weights of the networks (char2|dict2);
+##### - FEATURE EXTRACTION:
+  ```
+  bash textual/text_feature_extractor.sh
+  ```
+  remember to change the path regarding caffe-txt;
 
 ### OVERALL:
-```
-bash create_final_dataset.sh VIS_CNN VIS_LAYER TXT_MODEL TXT_LAYER
-
-  VIS_CNN = CNN model used for Visual Feature Extractor
-  VIS_LAYER = CNN layer used for Textual Feature Extractor
-  TXT_MODEL = CNN architecture used for Textual Feature Extractor
-  TXT_LAYER = CNN layer used for Textual Feature Extractor
-```
-```
-bash final_classifier.sh VIS_CNN VIS_LAYER TXT_MODEL TXT_LAYER N_THREADS
-
+#### - Union of Visual and Textual Features:
+  ```
+  bash create_final_dataset.sh VIS_CNN VIS_LAYER TXT_MODEL TXT_LAYER
+  ```
+  VIS_CNN = CNN model used for Visual Feature Extractor;
+  
+  VIS_LAYER = CNN layer used for Textual Feature Extractor;
+  
+  TXT_MODEL = CNN architecture used for Textual Feature Extractor;
+  
+  TXT_LAYER = CNN layer used for Textual Feature Extractor;
+  
+#### - Machine Learning Classifiers:  
+  ```
+  bash final_classifier.sh VIS_CNN VIS_LAYER TXT_MODEL TXT_LAYER N_THREADS
+  ```
   N_THREADS = Number of parallel threads
-```
 
 
