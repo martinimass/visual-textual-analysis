@@ -41,8 +41,7 @@ Each phase of the project shold have its own environment. We recommend to instal
   - Download and install the project for Text Classification
 
 ## Dataset:
-- Download the dataset files.
-- Create the `/dataset` folder and put dataset files inside that.
+- Download the dataset files in the `/dataset` folder.
 
 ## Run:
 Move to the `/bin` folder and run the scripts from there.
